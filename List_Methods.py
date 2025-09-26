@@ -87,3 +87,21 @@ matrix[1][0] = 7 # changing value of 1st row index and 0th coloumn index value -
 matrix[1][1] = 888 # changing value of 1st row index and 1st coloumn index value -> 888
 
 print("\nAfter Change The values Of 2-Dimensional List => ", matrix)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
