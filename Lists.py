@@ -31,36 +31,3 @@ print("\nThe Changed Value of Python_List [1, 2, 3, 4, 5 ] => ", numbers)
 Hetrogenous_List = [1, 2, "Mahesh Sir", "Santhosh Sir", "Sangeetha Ma'am", 24.6, True]
 
 print("\nThe Python_Lists can be mixture of any data_type ", Hetrogenous_List)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# done !!! 
