@@ -78,10 +78,11 @@ def insert_at_the_end_driver(list : SinglyLinkedlist):
     list.Insert_at_end(30)
     list.Insert_at_end(40)
 
+
 if __name__ == "__main__":
     # Create a mew singly Linked List
     list = SinglyLinkedlist()
 
-    #insert_at_the_beginning_driver(list)
+    insert_at_the_beginning_driver(list)
 
     insert_at_the_end_driver(list)
