@@ -56,8 +56,68 @@ class SinglyLinkedlist:
         # set the last node next to the new_node
         current_node.next = new_node
         return
+    
+    def print_list(self):
+        # when list is empty
+        if(self.head == None):
+            print("List is empty")
+            return
+        
+        current_node = self.head
+        while(current_node != None ):
+            print(str(current_node.data) + " --> ")
+            current_node = current_node.next
 
- 
+    def search(self, key):
+        # when list is empty
+        if(self.head == None):
+            print("List is empty")
+            return
+        
+        current_node = self.head
+
+        while(current_node != None ):
+            print(str(current_node.data) + " --> ")
+
+            if(key == current_node.data):
+                print(" Given key is present in the List")
+                return
+            
+            current_node = current_node.next
+
+        print("Given Key is not present in the List")
+
+    def delete_at_beginning(self):
+        # 1) List is Empty 
+        if (self.head == None):
+            return
+        
+        # 2) List has only one node
+        if (self.head.next == None):
+            self.head = None
+            return
+        
+        # 3) list has two or more nodes present
+        self.head = self.head.next
+
+    def delete_at_end(self):
+        # 1) list is empty 
+        if (self.head == None):
+            return
+        
+        # 2) list has only one node 
+        if (self.head.next == None):
+            self.head = None
+            return
+        
+        # 3) list has two or more nodes present
+        current_node = self.head
+        while (current_node.next.next != None):
+            current_node = current_node.next
+        
+        current_node.next = None
+
+
     def insert_at_position(self, data, insert_position):
     
         # Position is Invalid
@@ -136,6 +196,7 @@ def insert_at_the_end_driver(list : SinglyLinkedlist):
     list.Insert_at_end(30)
     list.Insert_at_end(40)
 
+# Insert / delete at given Position..!
 def insert_delete_at_given_position_driver(list : SinglyLinkedlist):
     list.insert_at_position(10, -1)
     list.delete_at_position(-1)
@@ -151,6 +212,37 @@ def insert_delete_at_given_position_driver(list : SinglyLinkedlist):
     list.insert_at_position(40, 4)
     list.insert_at_position(100, 10)
 
+# print search nodes...!
+def print_search_list_driver(list: SinglyLinkedlist):
+    list.print_list()
+
+    list.Insert_at_end(10)
+    list.print_list()
+
+    list.Insert_at_end(20)
+    list.Insert_at_end(30)
+    list.print_list()
+
+    list.search(100)
+    list.search(20)
+
+# Delete at beginning
+def delete_operations_start_end(list : SinglyLinkedlist):
+    list.delete_at_beginning()
+    list.delete_at_end()
+
+    list.insert_at_beginning(10)
+    list.delete_at_beginning()
+
+    list.insert_at_beginning(10)
+    list.delete_at_end
+
+    list.insert_at_beginning(10)
+    list.insert_at_beginning(20)
+    list.insert_at_beginning(30)
+    list.delete_at_end()
+    list.delete_at_end()
+
 
 if __name__ == "__main__":
     # Create a new singly Linked List
@@ -161,3 +253,8 @@ if __name__ == "__main__":
     insert_at_the_end_driver(list)
 
     insert_delete_at_given_position_driver(list)
+
+    print_search_list_driver(list)
+
+    delete_operations_start_end(list)
+
