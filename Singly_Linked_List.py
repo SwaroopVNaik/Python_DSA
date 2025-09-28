@@ -57,6 +57,64 @@ class SinglyLinkedlist:
         current_node.next = new_node
         return
 
+ 
+    def insert_at_position(self, data, insert_position):
+    
+        # Position is Invalid
+        if(insert_position <= 0):
+            print("Invalid Position")
+            return
+
+        # Insert at the first Postion
+        if(insert_position == 1):
+            self.insert_at_beginning(data)
+            return
+
+        # insert at position 2 or greater 
+        current_node = self.head
+        current_position = 1
+
+        while(current_position < insert_position - 1 and current_node is not None):
+            current_position = current_position + 1
+            current_node = current_node.next
+
+        if(current_node == None):
+            print("Invalid Position, there are lesser number of nodes")
+            return
+        
+        new_node = Node(data)
+        new_node.next = current_node.next 
+        current_node.next = new_node
+
+
+    def delete_at_position(self, delete_position):
+    
+        # Position is Invalid
+        if(delete_position <= 0):
+            print("Invalid Position")
+            return
+
+        # Delete at the first Postion
+        if(delete_position == 1):
+            if self.head is not None:
+                self.head = self.head.next
+            return
+
+        # delete at position 2 or greater 
+        current_node = self.head
+        current_position = 1
+
+        while(current_position < delete_position - 1 and current_node is not None):
+            current_position = current_position + 1
+            current_node = current_node.next
+
+        if(current_node == None or current_node.next == None):
+            print("Invalid Position, there are lesser number of nodes")
+            return
+            
+        current_node.next = current_node.next.next 
+
+
 # This code is outside the class SinglyLinkedList
 # Driver Code to test the above class
 
@@ -66,7 +124,7 @@ def insert_at_the_beginning_driver(list : SinglyLinkedlist):
     list.insert_at_beginning(20)
     list.insert_at_beginning(30)
 
-    print("List is created successfully")
+    print("List is created successfully") 
     print("Head Node data is : ", list.head.data)
     print("Next node data is : ", list.head.next.data)
     print("Next node Data is : ", list.head.next.next.data)
@@ -78,11 +136,28 @@ def insert_at_the_end_driver(list : SinglyLinkedlist):
     list.Insert_at_end(30)
     list.Insert_at_end(40)
 
+def insert_delete_at_given_position_driver(list : SinglyLinkedlist):
+    list.insert_at_position(10, -1)
+    list.delete_at_position(-1)
+
+    list.insert_at_position(10, 1)
+    list.delete_at_position(1)
+
+    list.Insert_at_end(10)
+    list.Insert_at_end(20)
+    list.Insert_at_end(30)
+
+    list.insert_at_position(15, 2)
+    list.insert_at_position(40, 4)
+    list.insert_at_position(100, 10)
+
 
 if __name__ == "__main__":
-    # Create a mew singly Linked List
+    # Create a new singly Linked List
     list = SinglyLinkedlist()
 
     insert_at_the_beginning_driver(list)
 
     insert_at_the_end_driver(list)
+
+    insert_delete_at_given_position_driver(list)
