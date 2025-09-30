@@ -3,30 +3,36 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None # In Python Null is None..!
+#------------------------------------------------------------------------------------------------
 
 # class implements all the operations for Singly_Linked_List..!
 class SinglyLinkedlist:
     def __init__(self):
         self.head = None
-
+#------------------------------------------------------------------------------------------------
     # This function add the node at the beginning.
     # This needs to handle two scenario/cases.
     # 1) when list is empty.
     # 2) List has some elements.
     def insert_at_beginning(self, data):
         # Create a new node
-        new_node = Node(data)
+        new_node = Node(data) #Invoking The Constructor of Node
 
-        # Case 1: If the list is empty, make the new_node as head..!
+        # Case 1: The List is Empty
         if (self.head == None):
             self.head = new_node 
             return
         
+        # No need of changing the next_node as it will be pointing to the None 
+        # only we have to point ( head -> None ) to ( head -> new_node ) 
+#------------------------------------------------------------------------------------------------
+
         # Case 2: If the list is not empty, make the new_node as head and point the head to the old head..!
         new_node.next = self.head
         self.head = new_node
         return
-    
+#-------------------------------------------------------------------------------------------------
+
     # This Function Adds the node at the end of the Linked list.
     # it needs to handle the two cases/scenario. 
     # 1) when list is empty.
@@ -41,21 +47,23 @@ class SinglyLinkedlist:
         if(self.head == None):
             self.head = new_node
             return
+#--------------------------------------------------------------------------------------------------
         
         # 2) When List has only one Node
         if(self.head.next == None):
             self.head.next = new_node
             return
-        
+#--------------------------------------------------------------------------------------------------
         # 3) When List has more then one Node loop till the last Node
         # Time Complexity -> O(n)
         current_node = self.head # declaring the temp Variable to store the (self.head) address
-        while(current_node.next != None):
+        while(current_node.next != None): 
             current_node = current_node.next
 
-        # set the last node next to the new_node
+        # set the last node next to the new_node (Implementing Logic)
         current_node.next = new_node
         return
+#--------------------------------------------------------------------------------------------------
     
     def print_list(self):
         # when list is empty
@@ -174,9 +182,8 @@ class SinglyLinkedlist:
             
         current_node.next = current_node.next.next 
 
-
-# This code is outside the class SinglyLinkedList
-# Driver Code to test the above class
+#--------------------------------------------------------------------------------------------------
+# Test_Code :-
 
 # Insert at the beginning..!
 def insert_at_the_beginning_driver(list : SinglyLinkedlist):
@@ -243,7 +250,7 @@ def delete_operations_start_end(list : SinglyLinkedlist):
     list.delete_at_end()
     list.delete_at_end()
 
-
+#--------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     # Create a new singly Linked List
     list = SinglyLinkedlist()
@@ -258,3 +265,4 @@ if __name__ == "__main__":
 
     delete_operations_start_end(list)
 
+#--------------------------------------Thank-You--------------------------------------------------
