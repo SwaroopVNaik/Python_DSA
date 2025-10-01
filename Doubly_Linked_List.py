@@ -109,6 +109,51 @@ class Doubly_Linked_list:
         new_node.prev = current_node # 4 
 
 #--------------------------------------------------------------------------------------------------
+    #Printing all the Nodes Case_1, Case_2, Case_3
+    def print_all_NODEs(self):
+        print("\nPrinting all the nodes in Doubly_Linked_List")
+        # Case_1 : List is Empty
+        if(self.head == None):
+            print("\nList is Empty")
+            return
+#---------------------------------------------------------------------------------------------------
+        """ <- (Multi Line Comment in Python)
+        # Case_2 : List has only one Node
+        if(self.head.next == None):
+            print(f"<-- {self.head.data} -->", end = " ")
+            return
+        """ # <- (Multi Line Comment In Python)
+#--------------------------------------------------------------------------------------------------
+        # Case_3 : List has more then One Node 
+        current_Node = self.head
+        while(current_Node != None):
+            print(f"<-- {current_Node.data} --> ", end = " " )
+
+            # To move the current_Node Pointer Forward
+            current_Node = current_Node.next
+#-------------------------------------------------------------------------------------------------
+        # Searching The Nodes in The Doubly_Linked_list Case_1, Case_2 
+    def search(self, key):
+        # Case_1 : List is Empty 
+        if(self.head == None):
+            print("\n Element Key Is Not Found In The List..!")
+            return
+#--------------------------------------------------------------------------------------------------          
+        # Case_2 : List Has One Or More Node's 
+        current_Node = self.head
+        while(current_Node != None):
+            if(current_Node.data == key):
+                print("Key is Found in the List..!")
+                return
+                
+            # To move the current_Node Pointer Forward
+            current_Node = current_Node.next
+
+        # If we Reach Here it means Key is not Found The List 
+        print("KEY IS NOT FOUND IN THE LIST ..!")
+#-------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------
 # Test_code :->
 
 # Insert at beginning
@@ -122,7 +167,8 @@ def insert_at_end_test(dlist : Doubly_Linked_list):
     dlist.insert_at_the_end(20)
     dlist.insert_at_the_end(30)
     dlist.insert_at_the_end(40)
-
+#--------------------------------------------------------------------------------------------------
+# insert at position
 def insert_at_position_test(dlist : Doubly_Linked_list):
     dlist.insert_at_position(10, -1)
     dlist.insert_at_position(10, 2)
@@ -132,15 +178,37 @@ def insert_at_position_test(dlist : Doubly_Linked_list):
     dlist.insert_at_position(30, 10)
     dlist.insert_at_position(40, 3)
     dlist.insert_at_position(50, 3)
+#---------------------------------------------------------------------------------------------------
+# print all NODEs
+def print_all_NODEs_test(dlist : Doubly_Linked_list):
+    dlist.print_all_NODEs()
+    dlist.insert_at_beginning(10)
+    dlist.print_all_NODEs()
 
+    dlist.insert_at_beginning(20)
+    dlist.insert_at_beginning(30)
+    dlist.insert_at_beginning(40)
+    dlist.print_all_NODEs()
+#-------------------------------------------------------------------------------------------------
+# Searching Key in The List 
+def search_test(dlist : Doubly_Linked_list):
+    dlist.insert_at_beginning(20)
+    dlist.insert_at_beginning(30)
+    dlist.insert_at_beginning(40)
+
+    dlist.search(100)
+    dlist.search(30)
 #--------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     
     dlist = Doubly_Linked_list() # calling constructor
 
-    insert_at_beginning_test(dlist)
+    #insert_at_beginning_test(dlist)
 
-    insert_at_end_test(dlist)
+    #insert_at_end_test(dlist)
 
-    insert_at_position_test(dlist)
+    #insert_at_position_test(dlist) 
 
+    #print_all_NODEs_test(dlist)
+
+    search_test(dlist) 
