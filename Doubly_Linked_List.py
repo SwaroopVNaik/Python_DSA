@@ -152,7 +152,6 @@ class Doubly_Linked_list:
         # If we Reach Here it means Key is not Found The List 
         print("KEY IS NOT FOUND IN THE LIST ..!")
 #-------------------------------------------------------------------------------------------------
-
 #--------------------------------------------------------------------------------------------------
 # Test_code :->
 
@@ -203,12 +202,12 @@ if __name__ == "__main__":
     
     dlist = Doubly_Linked_list() # calling constructor
 
-    #insert_at_beginning_test(dlist)
+    insert_at_beginning_test(dlist)
 
-    #insert_at_end_test(dlist)
+    insert_at_end_test(dlist)
 
-    #insert_at_position_test(dlist) 
+    insert_at_position_test(dlist) 
 
-    #print_all_NODEs_test(dlist)
+    print_all_NODEs_test(dlist)
 
     search_test(dlist) 
