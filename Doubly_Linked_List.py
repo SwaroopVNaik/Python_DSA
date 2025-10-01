@@ -132,7 +132,7 @@ class Doubly_Linked_list:
             # To move the current_Node Pointer Forward
             current_Node = current_Node.next
 #-------------------------------------------------------------------------------------------------
-        # Searching The Nodes in The Doubly_Linked_list Case_1, Case_2 
+    # Searching The Nodes in The Doubly_Linked_list Case_1, Case_2 
     def search(self, key):
         # Case_1 : List is Empty 
         if(self.head == None):
