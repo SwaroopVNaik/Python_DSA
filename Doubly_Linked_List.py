@@ -151,7 +151,79 @@ class Doubly_Linked_list:
 
         # If we Reach Here it means Key is not Found The List 
         print("KEY IS NOT FOUND IN THE LIST ..!")
+#--------------------------------------------------------------------------------------------------
+    # Deleting the Nodes at the Beginning of Doubly_Linked_list Case_1, Case_2, Case_3    
+    def delete_at_beginning(slef):
+        # Case_1 : List is Empty 
+        if(slef.head == None):
+            return
+#--------------------------------------------------------------------------------------------------        
+        # Case_2 : List has only One node 
+        if(slef.head.next == None):
+            slef.head = None
+            return
+#-------------------------------------------------------------------------------------------------        
+        # Case_3 : List has two or more Nodes
+        slef.head = slef.head.next
+        slef.head.prev = None
+        return
 #-------------------------------------------------------------------------------------------------
+    # Deleting the Nodes at the End of Doubly_Linked_list Case_1, Case_2, Case_3    
+    def delete_at_end(slef):
+        # Case_1 : List is Empty
+        if(slef.head == None):
+            return
+#-------------------------------------------------------------------------------------------------        
+        # Case_2 : List has only one Node 
+        if(slef.head.next == None):
+            slef.head = None
+            return
+#------------------------------------------------------------------------------------------------
+        # Case_3 : List has two or more Nodes
+        # Loop till we get Current_node to current but one node
+        current_node = slef.head
+        while(current_node.next.next != None):
+            current_node = current_node.next
+
+        current_node.next = None
+#-------------------------------------------------------------------------------------------------
+    def delete_at_position(slef, target_position):
+        # Case_1 : List is Empty
+        if(slef.head == None):
+            print("List is Empty")
+            return
+
+        # Case_2 : Position is InValid
+        if (target_position <= 0):
+            print(f"Invalid position {target_position}")
+            return
+
+        # Case_3 : List Has one Node 
+        if(slef.head.next == None):
+            slef.head = None
+            return
+
+        # Case_4 : List has Two or more Nodes
+        To_Be_Deleted = slef.head
+        current_position = 1
+
+        while(current_position < target_position and To_Be_Deleted is not None):
+            current_position = current_position + 1
+            To_Be_Deleted = To_Be_Deleted.next
+
+        if (To_Be_Deleted == None):
+            print(f"Target Position {target_position} is Invalid , we have lesser Number")
+            return
+        
+        # Case_4.1 : There are nodes after the to_be_deleted node 
+        if(To_Be_Deleted == None):
+            To_Be_Deleted.prev.next = None
+            return
+        
+        # Case_4.2 : to _be_deleted node is the last node
+        To_Be_Deleted.next.prev = To_Be_Deleted.prev
+        To_Be_Deleted.prev.next = To_Be_Deleted.next
+#--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 # Test_code :->
 
@@ -198,6 +270,41 @@ def search_test(dlist : Doubly_Linked_list):
     dlist.search(100)
     dlist.search(30)
 #--------------------------------------------------------------------------------------------------
+# Deleting Node at the beginning and End
+def delete_tests(dlist : Doubly_Linked_list):
+    dlist.delete_at_beginning()
+    dlist.delete_at_end()
+
+    dlist.insert_at_beginning(10)
+    dlist.delete_at_beginning
+
+    dlist.insert_at_beginning(10)
+    dlist.delete_at_end()
+
+    dlist.insert_at_beginning(10)
+    dlist.insert_at_beginning(20)
+    dlist.insert_at_beginning(30)
+    dlist.insert_at_beginning(40)
+    dlist.delete_at_end()
+#--------------------------------------------------------------------------------------------------
+# Delete Node at specified Position 
+def delete_at_position_test(dlist : Doubly_Linked_list):
+    dlist.delete_at_position(-1)
+    dlist.delete_at_position(1)
+
+    dlist.insert_at_beginning(10)
+    dlist.delete_at_position(-1)
+    dlist.delete_at_position(1)
+
+    dlist.insert_at_beginning(40)
+    dlist.insert_at_beginning(30)
+    dlist.insert_at_beginning(20)
+    dlist.insert_at_beginning(10)
+
+    dlist.delete_at_position(4)
+    dlist.delete_at_position(2)
+
+#--------------------------------------------------------------------------------------------------
 if __name__ == "__main__":
     
     dlist = Doubly_Linked_list() # calling constructor
@@ -211,3 +318,7 @@ if __name__ == "__main__":
     print_all_NODEs_test(dlist)
 
     search_test(dlist) 
+
+    delete_tests(dlist)
+
+    delete_at_position_test(dlist)
