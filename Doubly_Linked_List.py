@@ -180,7 +180,7 @@ class Doubly_Linked_list:
             return
 #------------------------------------------------------------------------------------------------
         # Case_3 : List has two or more Nodes
-        # Loop till we get Current_node to current but one node
+        # Loop till we get (Current_node != Null)
         current_node = slef.head
         while(current_node.next.next != None):
             current_node = current_node.next
@@ -216,13 +216,13 @@ class Doubly_Linked_list:
             return
         
         # Case_4.1 : There are nodes after the to_be_deleted node 
-        if(To_Be_Deleted == None):
+        if(To_Be_Deleted.next == None):
             To_Be_Deleted.prev.next = None
             return
         
         # Case_4.2 : to _be_deleted node is the last node
         To_Be_Deleted.next.prev = To_Be_Deleted.prev
-        To_Be_Deleted.prev.next = To_Be_Deleted.next
+        To_Be_Deleted.prev.next = To_Be_Deleted.next 
 #--------------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------------
 # Test_code :->
@@ -276,7 +276,7 @@ def delete_tests(dlist : Doubly_Linked_list):
     dlist.delete_at_end()
 
     dlist.insert_at_beginning(10)
-    dlist.delete_at_beginning
+    dlist.delete_at_beginning()
 
     dlist.insert_at_beginning(10)
     dlist.delete_at_end()
