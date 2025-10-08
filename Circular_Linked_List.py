@@ -7,7 +7,7 @@ class Node:
 class Circular_List:
     def __init__(self):
         self.tail = None
-
+#--------------------------------------------------------------------------------------------
     # This Function insert a node after tail(start)
     # if there is a node at start then it becomes a second node 
     # Here, tail node Remains the Same
@@ -24,7 +24,7 @@ class Circular_List:
         # Case_2 : Single Node / Multi - Node (Both Cases)
         new_node.next = slef.tail.next
         slef.tail.next = new_node
-
+#-------------------------------------------------------------------------------------------
     # This Function insert node at tail and new node becomes the tail
     # If there is new_node at then end then it becomes the tail
     # here, head node remains the Same
@@ -44,7 +44,7 @@ class Circular_List:
         self.tail.next = new_node # 2
         self.tail = new_node # changing reference (3)
         return
-    
+#-------------------------------------------------------------------------------------------    
     # Delete the node after tail node 
     # tail remains the same
     def delete_at_beginning(slef):
@@ -61,7 +61,7 @@ class Circular_List:
         
         # Case_3 : Multi - Node ( two or more )
         slef.tail.next  = slef.tail.next.next 
-    
+#-------------------------------------------------------------------------------------------  
     # node before tail becomes the new tail
     # since we don't have address of node before tail node we have to traverse to reach there
     def delete_at_tail(self):
@@ -81,7 +81,7 @@ class Circular_List:
 
         new_tail.next = self.tail.next
         self.tail = new_tail
-    
+#------------------------------------------------------------------------------------------    
     def print_all_nodes(self):
         # Case_1 : List is Empty
         if(self.tail == None):
@@ -97,7 +97,7 @@ class Circular_List:
             
             current_node = current_node.next
         # This is After While Loop 
-
+#-----------------------------------------------------------------------------------------
     def search_key(self, key):
         # Case_1 : List is Empty
         if(self.tail == None):
@@ -116,7 +116,7 @@ class Circular_List:
             
             current_node = current_node.next 
         print(" Key is not found in the List ")
-
+#-----------------------------------------------------------------------------------------
 def Circular_Linked_List_Tests(clist : Circular_List):
 
     # List is empty trying to delete a node
@@ -146,7 +146,7 @@ def Circular_Linked_List_Tests(clist : Circular_List):
     clist.print_all_nodes()
     clist.search_key(40)
     clist.search_key(700)
-
+#--------------------------------------------------------------------------------------------------
 def demo_infinite_loop(clisit: Circular_List):
     clist.insert_at_beginning(10)
     clist.insert_at_beginning(20)
@@ -154,11 +154,12 @@ def demo_infinite_loop(clisit: Circular_List):
     clist.insert_at_beginning(40)
 
     clist.search_key(700)
-
+#---------------------------------------------------------------------------------------------------
 
 if __name__== "__main__":
     clist = Circular_List()
     Circular_Linked_List_Tests(clist)
 
     demo_infinite_loop(clist)
- 
+
+#---------------------------------------------Thank-You-------------------------------------------
