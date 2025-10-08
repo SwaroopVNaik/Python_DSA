@@ -20,7 +20,7 @@ class Stack:
         self.top = new_node # 2
         self.count = self.count + 1 # Incrementing
         print(f" the pushed value {data} of the stack ")
-
+#------------------------------------------------------------------------------------------
     # Stack Operation -> Pop() Removes and returns the top element
     def pop(self) -> int :
         # case_1 : stack is Empty 
@@ -28,13 +28,13 @@ class Stack:
             print(" Stack is Empty, can't perform pop() operations ")
             return -100 # Returning Error
         
-        # if the stack is not empty
+        # if the stack is not emptys
         data = self.top.data
         self.top = self.top.next
         self.count = self.count - 1 # decrementing
         print(f" the popped element from the stack : {data} ")
         return data
-    
+#------------------------------------------------------------------------------------------   
     # Stack Operation -> peek() Returns top element without removing it 
     def peek(self) -> int:
         # case_1 : stack is Empty 
@@ -44,12 +44,12 @@ class Stack:
         
         # if stack is not Empty 
         return self.top.data
-    
+#------------------------------------------------------------------------------------------   
     # Stack Operation -> count() to get count of number of elements present in the stack
     def get_count(self) -> int:
         print(f" there are {self.count} elements in the stack ")
         return self.count 
-    
+#------------------------------------------------------------------------------------------
     # Stack Operation -> print() all the node values of the stack
     def print_all_values(self):
         # case_1 : the stack is empty
@@ -62,7 +62,7 @@ class Stack:
         while(current_node is not None):
             print(f"{ current_node.data }")
             current_node = current_node.next
-
+#-------------------------------------------------------------------------------------------
 if __name__ == "__main__":
 
     stack = Stack()
@@ -83,3 +83,4 @@ if __name__ == "__main__":
     stack.push(5)
     stack.print_all_values()
     stack.pop() 
+#-----------------------------------Thank-you----------------------------------------------------
