@@ -261,8 +261,8 @@ if __name__ == "__main__":
 
     insert_delete_at_given_position_driver(list)
 
-    # print_search_list_driver(list)
+    print_search_list_driver(list)
 
-    # delete_operations_start_end(list)
+    delete_operations_start_end(list)
 
 #--------------------------------------Thank-You--------------------------------------------------
