@@ -28,7 +28,7 @@ class Queue:
             
         self.rear = new_node
         self.count = self.count + 1
-
+#----------------------------------------------------------------------------------
     # dequeue -> Deleting the value From the front
     def dequeue(self) -> int:
         # Case_1: Queue is Empty
@@ -47,18 +47,18 @@ class Queue:
         self.count = self.count - 1
         print(f"Removing Element {return_data} from the Queue")
         return return_data
-    
+#----------------------------------------------------------------------------------   
     # Returns element without removing it
     def peek(self) -> int:
         if self.front == None:
             print("Queue is Empty")
             return -100  # returning error
         return self.front.data
-    
+#----------------------------------------------------------------------------------   
     # Count of the elements 
     def get_count(self) -> int:
         return self.count
-    
+#----------------------------------------------------------------------------------   
     # Printing all the elements in the List
     def print_all_the_elements(self):
         if self.front == None:
@@ -71,7 +71,7 @@ class Queue:
             print(f"{current_node.data} --> ", end="")
             current_node = current_node.next
         print()
-
+#----------------------------------------------------------------------------------
 if __name__ == "__main__":
 
     my_queue = Queue()
@@ -96,3 +96,4 @@ if __name__ == "__main__":
     Value = my_queue.dequeue()
     print(f"We got value -> {Value} from the queue")
     my_queue.print_all_the_elements()
+#----------------------------------------Thank-You-------------------------------
