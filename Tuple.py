@@ -6,6 +6,7 @@ Characteristics of Tuple ->
 
 The Tuple is Stored in Heap Memory !
 The Tuples are More efficient then Lists !
+Time Complexity of Tuple when Asscessing elements is O(1)
 
 """
 # Syntax Of Tuple ->
@@ -23,7 +24,9 @@ print(student_1[1])
 print(student_1[2])
 print(student_1[3])
 
-# -> student[3] = 40 ( we cannot Add(overide) new elements in Tuple once its Declared , Either once we use the declared tuple or we hv to throw it and Create a new tuple but cannot add new element to the Exsiting Tuple)
+""" -> student[3] = 40 ( we cannot Add(overide) new elements in Tuple once its Declared, 
+Either once we use the declared tuple or 
+we hv to throw it and Create a new tuple but cannot add new element to the Exsiting Tuple) """
 
 # Method_2 of Declaring Tuples 👇 :-> 
 # packing -> Assigning all the values of tuple to one variable and printing them 
@@ -56,3 +59,33 @@ print(name)
 print(dept)
 print(year)
 print(age)
+
+# Usage of Tuple :->
+# Returning Multiple Values from the Function
+# Function_Declaration 👇 :->
+def return_student_marks(name):
+    # Dummy Code or Logic
+    return 90, 99, 100, 75 
+"""In python it takes these values and creates a tuple,
+Makes this Tuple a object and store in RAM(HEAP MEMORY)
+and Return the Reference of the Object"""
+# We might feel its returning Multiple Values, when writing the code 😂 !!!
+""" -> we cannot return mutiple Values from function Like this directly in C , C#, java 
+    and so many other Programming Languages """
+# Function_Invokation 👇 :->
+student_marks = return_student_marks("Swaroop")
+print(student_marks)
+
+# Operations in Tuple 
+
+# Returns Number of elements in Tuple
+# student_1.count() -> Takes Only One Argument
+
+# Craeting a Tuple 
+Colleges = "SVIT", "RVCE", "PES", "RV", "SVIT", "KLE", "SVIT"
+# This Operations (Occurance Count) is very useful when dealing with thousands of Data
+# we need count of one particular data example -> college, person etcetc we can use the operations
+count = Colleges.count("SVIT")
+print(f"The Number of Students from SVIT = {count}")
+
+#---------------------------------------------Thank-You-------------------------------------------------
