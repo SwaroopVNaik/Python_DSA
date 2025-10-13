@@ -5,7 +5,7 @@ def find_student(name):
             print(f"{name} is found in the list")
             return
     print(f"{name} is not found in the list")
-#-----------------------------------------------------------------------------
+#----------------------------------------------------------------------------------------
 def find_student_usingset(): 
     if ("Amit" in enrolled_student_names): # Time complexity to search is O(1)
         print("Amit is found in the list")
@@ -13,7 +13,7 @@ def find_student_usingset():
         print("Amit is not found in the list")
 
     print("Amit" in enrolled_student_names)
-#-----------------------------------------------------------------------------
+#---------------------------------------------------------------------------------------
 def student_data_analysis():
 
     # Students who have enrolled in the course and also paid the fees 
@@ -37,7 +37,7 @@ def student_data_analysis():
     call_from_customercare_final_list = paid_course_student_names ^ enrolled_student_names
     print("Need to be followed-up by our customer care team")
     print(call_from_customercare_final_list)
-#-----------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------
 if __name__ == "__main__":
 
     enrolled_student_ids = { 100, 200, 101, 205, 305}
