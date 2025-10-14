@@ -46,7 +46,8 @@ car_list.clear()
 print(car_list)
 
 
-"""The student_directory dictionary holds student IDs as keys, with each value being another dictionary that contains the student's name and branch of study."""
+"""The student_directory dictionary holds student IDs as keys, 
+with each value being another dictionary that contains the student's name and branch of study."""
 student_directory = {
     101: {"name": "Alice", "branch": "Computer Science"},
     102: {"name": "Bob", "branch": "Electronics"},
