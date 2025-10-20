@@ -3,13 +3,13 @@ class Node:
     def __init__(self, data):
         self.data = data
         self.next = None # In Python Null is None..!
-#------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------
 
 # class implements all the operations for Singly_Linked_List..!
 class SinglyLinkedlist:
     def __init__(self):
         self.head = None
-#------------------------------------------------------------------------------------------------
+#------------------------------------------------------------------------------------------------------------
     # This function add the node at the beginning.
     # This needs to handle two scenario/cases.
     # 1) when list is empty.
@@ -25,13 +25,13 @@ class SinglyLinkedlist:
         
         # No need of changing the next_node as it will be pointing to the None 
         # only we have to point ( head -> None ) to ( head -> new_node ) 
-#------------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------------------------------------------
 
         # Case 2: If the list is not empty, make the new_node as head and point the head to the old head..!
         new_node.next = self.head
         self.head = new_node
         return
-#-------------------------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------------------------------------
 
     # This Function Adds the node at the end of the Linked list.
     # it needs to handle the two cases/scenario. 
