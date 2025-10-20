@@ -12,12 +12,16 @@ numbers.append(5) # appending Value 5 in number[] List..!
 
 print("\nThe Appended Values of List -> numbers [1, 3, 2] is =>", numbers)
 
+#---------------------------------------------------------------------------------------------
+
 # Sort - Function..!
 
 print("\nThe UnSorted List =>", numbers)
 numbers.sort() # It will sort the values in the List in ascending Order ( increasing order)
 
 print("\nThe Sorted List =>", numbers)
+
+#----------------------------------------------------------------------------------------------
 
 # Insert - Function..!
 
@@ -33,6 +37,8 @@ number_2.insert(0, 700)
 
 print("\nAfter Inserting values in the List =>", number_2)
 
+#--------------------------------------------------------------------------------------------------
+
 # remove - Function..!
 
 print("\nBefore removing the values of List =>", number_2)
@@ -41,6 +47,8 @@ number_2.remove(700)
 
 print("\nAfter removing the values of List =>", number_2)
 
+#--------------------------------------------------------------------------------------------------
+
 # reverse - function..!
 
 print("\nBefore reversing the Values in String => ", numbers)
@@ -48,6 +56,8 @@ print("\nBefore reversing the Values in String => ", numbers)
 numbers.reverse()
 
 print("\nAfter Reversing the Value of the String => ", numbers)
+
+#---------------------------------------------------------------------------------------------------
 
 # pop - function..!
 
@@ -60,6 +70,8 @@ print("\nBefore Popping the values from the List => ", numbers)
 numbers.pop(4)
 
 print("\nAfter Poping the elements from the List => ", numbers)
+
+#------------------------------------------------------------------------------------------------------
 
 # Accessing the Elements from the List 👇 !
 
@@ -87,3 +99,5 @@ matrix[1][0] = 7 # changing value of 1st row index and 0th coloumn index value -
 matrix[1][1] = 888 # changing value of 1st row index and 1st coloumn index value -> 888
 
 print("\nAfter Change The values Of 2-Dimensional List => ", matrix)
+
+#-------------------------------------------------Thank-You---------------------------------------------
